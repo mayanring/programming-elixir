@@ -74,6 +74,11 @@ defmodule MyList do
 	# {[1 | [2]], [3]}
 	# which is: {[1, 2], [3]}, our expected result.
 
+	def take([head | tail], count) when count > 0 do
+		[head | take(tail, count - 1)]
+	end
+
+	def take(list, _count), do: []
 
 
 end
